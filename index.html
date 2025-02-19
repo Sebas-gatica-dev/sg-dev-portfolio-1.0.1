@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <link href="/src/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root" ></div>
+
+    <script>
+      // Método para animaciones en general
+      function checkScroll(elements, callback) {
+          elements.forEach(e => {
+              const elementTop = e.getBoundingClientRect().top;
+              const windowHeight = window.innerHeight;
+              if (elementTop < windowHeight * 0.75) {
+                  callback(e);
+              }
+          });
+      }
+  
+      function checkScrollForHeros() {
+          const contenedores = document.querySelectorAll('.contenedor');
+        
+          // Llama directamente a checkScroll sin usar 'this'
+          checkScroll(contenedores, (contenedor) => {
+              contenedor.classList.add('visible');
+          });
+      }
+  
+      let isScrolling = false;
+  
+      // Event listener para el scroll, optimizado con requestAnimationFrame
+      window.addEventListener('scroll', () => {
+          if (!isScrolling) {
+              window.requestAnimationFrame(() => {
+                  const contenedores = document.querySelectorAll('.contenedor');
+                  checkScroll(contenedores, (contenedor) => {
+                      contenedor.classList.add('visible');
+                  });
+                  isScrolling = false;
+              });
+              isScrolling = true;
+          }
+      });
+  
+      // Event listener para cuando la página carga
+      window.addEventListener('load', () => {
+          const contenedores = document.querySelectorAll('.contenedor');
+          checkScroll(contenedores, (contenedor) => {
+              contenedor.classList.add('visible');
+          });
+      });
+  </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

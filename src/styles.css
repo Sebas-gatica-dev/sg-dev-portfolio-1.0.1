@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: #f0f0f0;
+}
+
+.contenedor {
+    margin: 20px;
+    opacity: 0; /* Comienza invisible */
+    transform: translateX(-100px); /* Posición inicial fuera de la pantalla */
+    transition: all 0.6s cubic-bezier(0.2, 0, 0.3, 1); /* Animación suave */
+}
+
+.contenedor.derecha {
+    transform: translateX(1000px); /* Movimiento hacia la derecha */
+}
+
+.contenedor.izquierda {
+    transform: translateX(-1000px); /* Movimiento hacia la izquierda */
+}
+
+.contenedor.visible {
+    opacity: 1; /* Hacer visible */
+    transform: translateX(0); /* Mover al centro */
+}
+
+.hero-1{
+    background-image: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);
+}
+
+
+
+.animate-blink {
+    animation: blink 0.9s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+/* Estilo base para el contenido del acordeón */
+.accordion-content {
+    max-height: 0; /* Altura inicial (cerrado) */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Inicialmente invisible */
+  }
+  
+  /* Cuando el acordeón está abierto */
+  .accordion-content.open {
+    max-height: 500px; /* Altura máxima (abierto) */
+    opacity: 1; /* Visible */
+  }

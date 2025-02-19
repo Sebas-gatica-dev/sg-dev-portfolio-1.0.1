@@ -1,0 +1,36 @@
+// export const tecnologies = [
+//     { name: "JavaScript", image: "https://cdn.devdojo.com/images/february2023/javascript.svg" },
+//     { name: "TypeScript", image: "https://cdn.devdojo.com/images/february2023/typescript.svg" },
+//     { name: "React", image: "https://cdn.devdojo.com/images/february2023/react.svg" },
+//     { name: "Livewire", image: "https://cdn.devdojo.com/images/february2023/livewire.svg" },
+//     { name: "Laravel", image: "https://cdn.devdojo.com/images/february2023/laravel.svg" },
+//     { name: "Tailwind", image: "https://cdn.devdojo.com/images/february2023/tailwind.svg" },
+//     { name: "Bootstrap", image: "https://cdn.devdojo.com/images/february2023/bootstrap.svg" },
+//     { name: "Git", image: "https://cdn.devdojo.com/images/february2023/git.svg" },
+//     { name: "GitHub", image: "https://cdn.devdojo.com/images/february2023/github.svg" },
+//     { name: "Vite", image: "https://cdn.devdojo.com/images/february2023/vite.svg" },
+// ];
+
+export const technologies = [
+    "React",
+    "JavaScript",
+    "Vanilla JS",
+    "TypeScript",
+    "Angular",
+    "SpringBoot",
+    "Express",
+    "Node.js",
+    "Livewire",
+    "Laravel",
+    "TailwindCSS",
+    "AlpineJS",
+    "Bootstrap",
+    "Selenium",
+    "BeautifulSoup",
+    "Flask",
+    "Hibernate",
+    "Spring Data JPA",
+    "Spring Security",
+    "Lombook",
+    "Ionic"
+  ];
